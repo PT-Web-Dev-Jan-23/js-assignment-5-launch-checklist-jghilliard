@@ -32,10 +32,12 @@ function validateInput(testInput) {
    if (testInput === ""){
     return "Empty";
    }
-   if (isNaN(testNumber)){
+   else if (isNaN(testNumber)){
     return "Not a Number";
    } else {return "Is a Number";}
 }
+
+
 
 
 // From the HTML for reference:
@@ -74,7 +76,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
        validateInput(fuelLevel) === "Empty" ||
        validateInput(cargoLevel) === "Empty")
        {
-        alert("Please enter a value for all fields");
+        alert("Please enter a value for all fields.");
        } 
        else if (validateInput(pilot) === "Is a Number" ||
                   validateInput(copilot) === "Is a Number" ||
@@ -85,11 +87,12 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
                   }
         else {
             //>= 10,000L <= 10,000kg
-            let flightStatus = document.getElementById("launchStatus");
+            //let flightStatus = document.getElementById("launchStatus");
             list.style.visibility = "visible";
             pilotReady.innerHTML = `Pilot ${pilot} is ready for launch`;
             copilotReady.innerHTML = `Co-pilot ${copilot} is ready for launch`;
-            
+            let flightStatus = document.getElementById("launchStatus");
+
     if (fuelLevel >= 10000 && cargoLevel <=10000 ){
         fuelReady.innerHTML = "Fuel level high enough for launch";
         cargoReady.innerHTML = "Cargo mass low enough for launch";
@@ -111,10 +114,10 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         flightStatus.innerHTML = "Shuttle Not Ready for Launch";
         flightStatus.style.color = "rgb(199, 37, 78)";
     }
+}    
 }
 
-       
-}
+
 
 async function myFetch() {
     let planetsReturned;
@@ -126,6 +129,8 @@ async function myFetch() {
     return planetsReturned;
 }
 
+
+
 function pickPlanet(planets) {
     let choice = Math.random() * 10;
     choice = Math.floor(choice);
@@ -133,8 +138,10 @@ function pickPlanet(planets) {
         trial = Math.random() * 10;
         choice = Math.floor(choice);
     }
+    console.log(planets[choice]);
     return planets[choice];
 }
+
 
 
  

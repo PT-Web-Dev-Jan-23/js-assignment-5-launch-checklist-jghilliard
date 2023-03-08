@@ -1,8 +1,12 @@
 // Write your JavaScript code here!
 
+
+//commenting out the following line makes my page work, but the code fails the automated testing.
 const { myFetch, pickPlanet, addDestinationInfo, formSubmission } = require("./scriptHelper");
 
 window.addEventListener("load", function() {
+
+    console.log("Started");
 
    let listedPlanets;
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
@@ -14,7 +18,7 @@ window.addEventListener("load", function() {
        console.log(listedPlanets);
        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
        let planet = pickPlanet(listedPlanets);
-       addDestinationInfo(document, planet.name, planet.diameter, planted.star, planet.distance, planet.moons, planet.image);
+       addDestinationInfo(document, planet.name, planet.diameter, planet.star, planet.distance, planet.moons, planet.image);
    })
 
    let itemList = document.getElementById("faultyItems"); 
@@ -33,7 +37,7 @@ window.addEventListener("load", function() {
         let pilot = document.querySelector("input[name=pilotName]").value;
         let copilot = document.querySelector("input[name=copilotName]");
         let fuel = document.querySelector("input[name=fuelLevel]");
-        let cargo = document.querySelector("input[name=cargoLevel]");
+        let cargo = document.querySelector("input[name=cargoMass]");
         let actualPilot = pilot.value;
         let actualCopilot = copilot.value;
         let actualFuel = fuel.value;
