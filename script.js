@@ -18,7 +18,7 @@ window.addEventListener("load", function() {
    })
 
    let itemList = document.getElementById("faultyItems"); 
-   //itemList.style.visibility = "hidden";
+   itemList.style.visibility = "hidden";
    let form = document.querySelector("form");
 
    form.addEventListener("submit", function(event) {
@@ -30,7 +30,7 @@ window.addEventListener("load", function() {
         //        alert("All fields are required!");
         //        // stop the form submission
         //        event.preventDefault();
-        let pilot = document.querySelector("input[name=pilotName]");
+        let pilot = document.querySelector("input[name=pilotName]").value;
         let copilot = document.querySelector("input[name=copilotName]");
         let fuel = document.querySelector("input[name=fuelLevel]");
         let cargo = document.querySelector("input[name=cargoLevel]");
