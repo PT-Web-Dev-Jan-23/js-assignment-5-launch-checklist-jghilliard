@@ -4,18 +4,19 @@
 //commenting out the following line makes my page work, but the code fails the automated testing.
 const { myFetch, pickPlanet, addDestinationInfo, formSubmission } = require("./scriptHelper");
 
-window.addEventListener("load", function() {
+//window.addEventListener("load", function() {
+document.addEventListener("DOMContentLoaded", function(){
 
-    console.log("Started");
+    //console.log("Started");
 
    let listedPlanets;
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
    let listedPlanetsResponse = myFetch();
    listedPlanetsResponse.then(function (result) {
        listedPlanets = result;
-       console.log(listedPlanets);
+       //console.log(listedPlanets);
    }).then(function () {
-       console.log(listedPlanets);
+      // console.log(listedPlanets);
        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
        let planet = pickPlanet(listedPlanets);
        addDestinationInfo(document, planet.name, planet.diameter, planet.star, planet.distance, planet.moons, planet.image);
