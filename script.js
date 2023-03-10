@@ -2,13 +2,14 @@
 
 
 //commenting out the following line makes my page work, but the code fails the automated testing.
-const { myFetch, pickPlanet, addDestinationInfo, formSubmission } = require("./scriptHelper");
+
+//const { myFetch, pickPlanet, addDestinationInfo, formSubmission } = require("./scriptHelper");
 
 //window.addEventListener("load", function() {
 document.addEventListener("DOMContentLoaded", function(){
     //let itemList  = screen.getByTestId(container, "faultyItems");
     let itemList = document.getElementById("faultyItems"); 
-    itemList.style.visibility = "hidden";
+    itemList.style.visibility = 'hidden';
     //document.getElementById("faultyItems")[0].style.visibility = "hidden";
     
 
