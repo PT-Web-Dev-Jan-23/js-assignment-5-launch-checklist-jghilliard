@@ -68,6 +68,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    let copilotReady = document.getElementById("copilotStatus");
    let fuelReady = document.getElementById("fuelStatus");
    let cargoReady = document.getElementById("cargoStatus");
+   //let nlist = document.getElementById("faultyItems");
 
    //validate user inputs
 

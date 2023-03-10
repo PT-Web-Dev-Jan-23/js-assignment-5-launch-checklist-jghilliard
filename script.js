@@ -6,6 +6,11 @@ const { myFetch, pickPlanet, addDestinationInfo, formSubmission } = require("./s
 
 //window.addEventListener("load", function() {
 document.addEventListener("DOMContentLoaded", function(){
+    //let itemList  = screen.getByTestId(container, "faultyItems");
+    let itemList = document.getElementById("faultyItems"); 
+    itemList.style.visibility = "hidden";
+    //document.getElementById("faultyItems")[0].style.visibility = "hidden";
+    
 
     //console.log("Started");
 
@@ -22,8 +27,7 @@ document.addEventListener("DOMContentLoaded", function(){
        addDestinationInfo(document, planet.name, planet.diameter, planet.star, planet.distance, planet.moons, planet.image);
    })
 
-   let itemList = document.getElementById("faultyItems"); 
-   itemList.style.visibility = "hidden";
+
    let form = document.querySelector("form");
 
    form.addEventListener("submit", function(event) {
@@ -35,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function(){
         //        alert("All fields are required!");
         //        // stop the form submission
         //        event.preventDefault();
+        //itemList.style.visibility = "hidden";
         let pilot = document.querySelector("input[name=pilotName]").value;
         let copilot = document.querySelector("input[name=copilotName]");
         let fuel = document.querySelector("input[name=fuelLevel]");
